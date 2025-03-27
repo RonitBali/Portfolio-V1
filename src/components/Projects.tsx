@@ -1,6 +1,5 @@
-import React from 'react'
-import { Card, FocusCards } from './ui/Focus-card'
-import { title } from 'process'
+
+import {  FocusCards } from './ui/Focus-card'
 
 
 const Projects = () => {

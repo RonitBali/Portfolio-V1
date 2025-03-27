@@ -18,6 +18,7 @@ const Hero = () => {
       }, 100);
     }, 4000);
     return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -34,6 +35,7 @@ const Hero = () => {
           moveParticlesOnHover={true}
           alphaParticles={false}
           disableRotation={false}
+          className={{}}
         />
       </div>
 

@@ -117,7 +117,7 @@ export const CardItem = ({
   rotateX?: number | string;
   rotateY?: number | string;
   rotateZ?: number | string;
-  [key: string]: any;
+  [key: string]: unknown;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isMouseEntered] = useMouseEnter();
@@ -130,7 +130,7 @@ export const CardItem = ({
       ref.current.style.boxShadow = "none"; // ✅ No glow ever
       ref.current.style.filter = "none";
     }
-  }, [isMouseEntered]);
+  }, [isMouseEntered, rotateX, rotateY, rotateZ, translateX, translateY, translateZ]);
 
   return (
     <Tag
@@ -148,6 +148,7 @@ export const CardItem = ({
 };
 
 // Hook to use context
+// eslint-disable-next-line react-refresh/only-export-components
 export const useMouseEnter = () => {
   const context = useContext(MouseEnterContext);
   if (context === undefined) {

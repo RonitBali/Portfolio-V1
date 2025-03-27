@@ -1,12 +1,18 @@
-import React from 'react';
+
 import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
 import { FaReact, FaUnity, FaCss3Alt, FaHtml5, FaGitAlt, FaNpm } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss, SiFirebase, SiAdobeaftereffects, SiCanva } from "react-icons/si";
+import {  SiTailwindcss, SiFirebase, SiAdobeaftereffects, SiCanva } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
 import { PiFileCppFill } from "react-icons/pi";
 
 const TechStack = () => {
-  const TechIcon = ({ Icon, name, color }) => (
+  interface TechIconProps {
+    Icon: React.ComponentType<{ className?: string }>;
+    name: string;
+    color: string;
+  }
+
+  const TechIcon: React.FC<TechIconProps> = ({ Icon, name, color }) => (
     <div className="flex flex-col items-center w-20 space-y-2 group">
       <Icon className={`text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-200 ${color}`} />
       <span className="text-sm text-gray-300">{name}</span>

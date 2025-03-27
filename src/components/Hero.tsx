@@ -35,7 +35,7 @@ const Hero = () => {
           moveParticlesOnHover={true}
           alphaParticles={false}
           disableRotation={false}
-          className={{}}
+          className=""
         />
       </div>
 

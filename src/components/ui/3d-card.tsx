@@ -1,15 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import Image from "next/image";
-import React, {
-  createContext,
-  useState,
-  useContext,
-  useRef,
-  useEffect,
-} from "react";
+import React, { createContext, useState, useContext, useRef, useEffect } from "react";
 
+// Context to manage hover state
 const MouseEnterContext = createContext<
   [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
 >(undefined);
@@ -28,33 +22,34 @@ export const CardContainer = ({
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return;
-    const { left, top, width, height } =
-      containerRef.current.getBoundingClientRect();
+    const { left, top, width, height } = containerRef.current.getBoundingClientRect();
     const x = (e.clientX - left - width / 2) / 25;
     const y = (e.clientY - top - height / 2) / 25;
     containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
   };
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseEnter = () => {
     setIsMouseEntered(true);
-    if (!containerRef.current) return;
+    if (containerRef.current) {
+      containerRef.current.style.boxShadow = "none"; // ✅ Ensures no glow
+      containerRef.current.style.filter = "none"; // ✅ Prevents soft glow
+    }
   };
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    setIsMouseEntered(false);
-    containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
+  const handleMouseLeave = () => {
+    if (containerRef.current) {
+      setIsMouseEntered(false);
+      containerRef.current.style.transform = "rotateY(0deg) rotateX(0deg)";
+      containerRef.current.style.boxShadow = "none"; // ✅ Removes any glow
+      containerRef.current.style.filter = "none"; // ✅ No unwanted brightness
+    }
   };
+
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
-        className={cn(
-          "py-20 flex items-center justify-center",
-          containerClassName
-        )}
-        style={{
-          perspective: "1000px",
-        }}
+        className={cn("py-20 flex items-center justify-center", containerClassName)}
+        style={{ perspective: "1000px" }}
       >
         <div
           ref={containerRef}
@@ -67,6 +62,8 @@ export const CardContainer = ({
           )}
           style={{
             transformStyle: "preserve-3d",
+            boxShadow: "none", // ✅ No shadow
+            filter: "none", // ✅ No blur or brightness
           }}
         >
           {children}
@@ -86,9 +83,13 @@ export const CardBody = ({
   return (
     <div
       className={cn(
-        "h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
+        "h-96 w-96 [transform-style:preserve-3d] [&>*]:[transform-style:preserve-3d]",
         className
       )}
+      style={{
+        boxShadow: "none", // ✅ Ensures child components don't have glow
+        filter: "none",
+      }}
     >
       {children}
     </div>
@@ -122,22 +123,23 @@ export const CardItem = ({
   const [isMouseEntered] = useMouseEnter();
 
   useEffect(() => {
-    handleAnimations();
-  }, [isMouseEntered]);
-
-  const handleAnimations = () => {
-    if (!ref.current) return;
-    if (isMouseEntered) {
-      ref.current.style.transform = `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
-    } else {
-      ref.current.style.transform = `translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
+    if (ref.current) {
+      ref.current.style.transform = isMouseEntered
+        ? `translateX(${translateX}px) translateY(${translateY}px) translateZ(${translateZ}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`
+        : "translateX(0px) translateY(0px) translateZ(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)";
+      ref.current.style.boxShadow = "none"; // ✅ No glow ever
+      ref.current.style.filter = "none";
     }
-  };
+  }, [isMouseEntered]);
 
   return (
     <Tag
       ref={ref}
       className={cn("w-fit transition duration-200 ease-linear", className)}
+      style={{
+        boxShadow: "none", // ✅ Ensures no glow
+        filter: "none",
+      }}
       {...rest}
     >
       {children}
@@ -145,7 +147,7 @@ export const CardItem = ({
   );
 };
 
-// Create a hook to use the context
+// Hook to use context
 export const useMouseEnter = () => {
   const context = useContext(MouseEnterContext);
   if (context === undefined) {

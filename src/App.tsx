@@ -5,6 +5,8 @@ import Hero from './components/Hero'
 import TechStack from './components/TechStack'
 import './App.css'
 import Projects from './components/Projects'
+import About from './components/About'
+import { Analytics } from "@vercel/analytics/react"
 import Footer from './components/Footer'
 
 
@@ -16,8 +18,10 @@ function App({ children }: { children?: React.ReactNode }) {
       <Navbar/>
       <Hero/>
       <TechStack/>
+      <About/>
       <Projects/>
       <Footer/>
+      <Analytics/>
     </ThemeProvider>
   );
 }

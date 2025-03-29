@@ -49,12 +49,13 @@ const Hero = () => {
         <h1 className="text-6xl font-extrabold text-white">
           I'm a{" "}
           <span className={`inline-block transition-opacity duration-500 ${fade ? "opacity-0" : "opacity-100"}`}>
-            <ColourfulText text={words[index]} />
+            <ColourfulText>{words[index]}</ColourfulText>
           </span>
         </h1>
         <p className="text-lg text-gray-300 mt-4">
           Passionate about crafting immersive gaming experiences, sleek web interfaces, and engaging visuals.
         </p>
+        
 
         {/* Buttons */}
         <div className="flex gap-4 justify-center mt-8 ">

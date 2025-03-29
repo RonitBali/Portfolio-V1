@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "motion/react";
 
-export function ColourfulText({ text }: { text: string }) {
+export function ColourfulText({ children }: { children: string }) {
   const colors = [
     "rgb(131, 179, 32)",
     "rgb(47, 195, 106)",
@@ -27,15 +27,12 @@ export function ColourfulText({ text }: { text: string }) {
     }, 5000);
 
     return () => clearInterval(interval);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return text.split("").map((char, index) => (
+  return children.split("").map((char, index) => (
     <motion.span
       key={`${char}-${count}-${index}`}
-      initial={{
-        y: 0,
-      }}
+      initial={{ y: 0 }}
       animate={{
         color: currentColors[index % currentColors.length],
         y: [0, -3, 0],

@@ -32,7 +32,7 @@ const TechStack = () => {
               <TechIcon Icon={FaCss3Alt} name="CSS" color="text-blue-600" />
               <TechIcon Icon={IoLogoJavascript} name="JavaScript" color="text-yellow-300" />
               <TechIcon Icon={FaReact} name="React" color="text-blue-500" />
-              <TechIcon Icon={SiTailwindcss} name="Tailwind CSS" color="text-cyan-400" />
+              <TechIcon Icon={SiTailwindcss} name="TailwindCSS" color="text-cyan-400" />
               <TechIcon Icon={FaGitAlt} name="Git" color="text-orange-400" />
               <TechIcon Icon={PiFileCppFill} name="C++" color="text-blue-400" />
               <TechIcon Icon={SiFirebase} name="Firebase" color="text-yellow-500" />

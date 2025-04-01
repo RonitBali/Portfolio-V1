@@ -12,6 +12,7 @@ import Footer from './components/Footer'
 
 function App({ children }: { children?: React.ReactNode }) {
   return (
+    
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       {children}
     

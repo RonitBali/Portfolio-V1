@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { ColourfulText } from "./ui/Colourfull-text";
 import Particles from "./ui/Particles";
@@ -18,7 +18,7 @@ const Hero = () => {
       }, 100);
     }, 4000);
     return () => clearInterval(interval);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -55,22 +55,26 @@ const Hero = () => {
         <p className="text-lg text-gray-300 mt-4">
           Passionate about crafting immersive gaming experiences, sleek web interfaces, and engaging visuals.
         </p>
-        
+
 
         {/* Buttons */}
         <div className="flex gap-4 justify-center mt-8 ">
-        <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-          <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-5 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-            View My Work
-          </span>
-        </button>
-        <button className="ml-5  relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-          <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-10 py-5 text-sm font-medium text-white backdrop-blur-3xl">
-            Hire Me
-          </span>
-        </button>
+          <button
+            onClick={() => document.getElementById("work")?.scrollIntoView({ behavior: "smooth" })}
+            className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px]">
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-5 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+              View My Work
+            </span>
+          </button>
+          <button
+           onClick={() => window.open("https://www.linkedin.com/in/ronit-bali-xe/", "_blank")} 
+           className="ml-5  relative inline-flex h-12 overflow-hidden rounded-full p-[1px] ">
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-10 py-5 text-sm font-medium text-white backdrop-blur-3xl">
+              Hire Me
+            </span>
+          </button>
         </div>
         {/* <div className="flex gap-4 justify-center mt-8">
           {["View My Work", "Hire Me"].map((text, index) => (

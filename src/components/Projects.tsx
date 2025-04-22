@@ -10,12 +10,26 @@ const Projects = () => {
             link: "https://valo-dex.vercel.app",
             tags: ["React", "API", "JavaScript"]
         },
+        // {
+        //     title: "Random Password Generator",
+        //     description: "Generate secure passwords with customizable options",
+        //     src: "/Projects/rpg.png",
+        //     link: "https://password-generator-flax-six.vercel.app",
+        //     tags: ["JavaScript", "CSS", "Security"]
+        // },
         {
-            title: "Random Password Generator",
-            description: "Generate secure passwords with customizable options",
-            src: "/Projects/rpg.png",
-            link: "https://password-generator-flax-six.vercel.app",
-            tags: ["JavaScript", "CSS", "Security"]
+            title:"Ani-Newz",
+            description: "Stay updated with the latest anime news and browse your favorite anime titles",
+            src:"./Projects/ani-newz.png",
+            link:"https://ani-newz.vercel.app",
+            tags:["React","Jikan API","Firebase","Auth"]
+        },
+        {
+            title:"Github Battle",
+            description: "Challenge friends to a 1v1 GitHub battle and share the results on Twitter",
+            src:"./Projects/gitbattle.png",
+            link:"https://gitbattlehub.vercel.app",
+           "tags": ["GitHub API", "JavaScript","Gemini", "Twitter"]
         },
     ];
 

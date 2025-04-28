@@ -1,6 +1,7 @@
 import { ExternalLink } from 'lucide-react';
 import SpotlightCard from './ui/Spotlight-card';
 
+// #181D27
 const Projects = () => {
     const projects = [
         {
@@ -43,7 +44,7 @@ const Projects = () => {
                 {projects.map((project, index) => (
                     <SpotlightCard
                         key={index}
-                        className="group backdrop-blur-sm bg-[#181D27] bg-opacity-70 rounded-2xl border border-gray-800 p-5 sm:p-6 transition-all duration-300 "
+                        className="group backdrop-blur-sm bg-[#141924] bg-opacity-70 rounded-2xl border border-gray-800 p-5 sm:p-6 transition-all duration-300 "
                         spotlightColor="rgba(255, 255, 255, 0.1)"
                     >
                         <div className="space-y-6">

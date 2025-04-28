@@ -21,7 +21,7 @@ const TechStack = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center min-h-[60vh] px-4 sm:px-6">
       <h3 className="text-center text-3xl sm:text-5xl font-bold bg-clip-text text-gray-200 mb-10">
-        Technologies I Use
+        Technologies I Know
       </h3>
       <CardContainer className="flex justify-center w-full h-full">
         <CardBody className="relative dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full sm:w-[32rem] h-auto rounded-xl px-4 sm:p-6 py-6 border bg-gray-50 dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1]">

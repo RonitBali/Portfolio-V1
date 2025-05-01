@@ -23,7 +23,7 @@ const Hero = () => {
     <div className="relative flex flex-col items-center justify-center min-h-[90vh] px-4 sm:px-6 md:px-12 lg:px-24">
 
       {/* Background Particles */}
-      <div className="absolute inset-0 w-full h-[100vh] -z-10">
+      {/* <div className="absolute inset-0 w-full h-[100vh] -z-10">
         <Particles
           particleColors={["#d3c6d7", "#d3c6d7"]}
           particleCount={200}
@@ -34,7 +34,7 @@ const Hero = () => {
           alphaParticles={false}
           disableRotation={false}
         />
-      </div>
+      </div> */}
 
       {/* Spotlight Effects */}
       <Spotlight className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen" fill="white" />

@@ -1,8 +1,27 @@
+import { useEffect, useState } from "react";
+
 const Navbar = () => {
+  // Track if the device is mobile
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    // Check if the device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    // Run on mount and whenever window size changes
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    
+    // Clean up
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <nav
       id="home"
-      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 w-full flex justify-center"
+      className={`${isMobile ? 'relative' : 'fixed'} top-4 left-1/2 -translate-x-1/2 z-50 px-4 w-full flex justify-center`}
     >
       <div className="max-w-[90%] md:max-w-fit">
         <ul

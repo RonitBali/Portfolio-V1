@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Spotlight } from "./ui/Spotlight";
 import { ColourfulText } from "./ui/Colourfull-text";
-import Particles from "./ui/Particles";
+
 
 const Hero = () => {
   const words = ["Developer.|", "Gamer.|", "Designer.|", "Editor.|"];

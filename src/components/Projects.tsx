@@ -32,6 +32,13 @@ const Projects = () => {
             link:"https://gitbattlehub.vercel.app",
            "tags": ["GitHub API", "JavaScript","Gemini", "Twitter"]
         },
+         {
+            title:"FLow4Life",
+            description: "A real-time blood donation platform where users can request or donate blood based on their location and availability.",
+            src:"./Projects/flow4life.png",
+            link:"https://flow4life.vercel.app",
+           "tags": ["Loacation Api", "Socket.io","health-tech", "Blood-donation"]
+        },
     ];
 
     return (
@@ -44,7 +51,7 @@ const Projects = () => {
                 {projects.map((project, index) => (
                     <SpotlightCard
                         key={index}
-                        className="group backdrop-blur-sm bg-[#141924] bg-opacity-70 rounded-2xl border border-gray-800 p-5 sm:p-6 transition-all duration-300 "
+                        className="group backdrop-blur-sm bg-[#181D27] bg-opacity-70 rounded-2xl border border-gray-800 p-5 sm:p-6 transition-all duration-300 "
                         spotlightColor="rgba(255, 255, 255, 0.1)"
                     >
                         <div className="space-y-6">

@@ -49,7 +49,7 @@ const Hero = () => {
           </span>
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-gray-300 mt-4 sm:mt-6">
-          Passionate about crafting immersive gaming experiences, sleek web interfaces, and engaging visuals.
+          Blending technology and creativity, I design responsive web interfaces and visually stunning digital experiences.
         </p>
 
         {/* Buttons */}

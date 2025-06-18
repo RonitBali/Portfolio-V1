@@ -25,7 +25,7 @@ const Navbar = () => {
     >
       <div className="max-w-[90%] md:max-w-fit">
         <ul
-          className="flex flex-wrap justify-center text-sm sm:text-base md:text-xl font-semibold gap-4 sm:gap-6 text-gray-200 
+          className="flex flex-wrap mt-3 justify-center text-sm sm:text-base md:text-xl font-semibold gap-4 sm:gap-6 text-gray-200 
           bg-gray-900/80 border border-gray-700 backdrop-blur-md shadow-xl 
           rounded-full px-6 sm:px-10 md:px-12 py-3 sm:py-4 font-sans transition-all"
         >

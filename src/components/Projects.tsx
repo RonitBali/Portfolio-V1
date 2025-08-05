@@ -29,7 +29,7 @@ const Projects = () => {
             title:"Github Battle",
             description: "Challenge friends to a 1v1 GitHub battle and share the results on Twitter",
             src:"./Projects/gitbattle.png",
-            link:"https://gitbattlehub.vercel.app",
+            link:"https://git-battle-v1.vercel.app",
            "tags": ["GitHub API", "JavaScript","Gemini", "Twitter"]
         },
          {
@@ -38,7 +38,13 @@ const Projects = () => {
             src:"./Projects/flow4life.png",
             link:"https://flow4life.vercel.app",
            "tags": ["Loacation Api", "Socket.io","health-tech", "Blood-donation"]
-        },
+        },{
+             title:"MockMate",
+            description: " Developed a web app where Students & Professionals take mock interviews with an AI.",
+            src:"./Projects/mockmate.png",
+            link:"https://mock-mate-v1.vercel.app",
+           "tags": [" React.js ", "Azure Open AI","Web Rtc", "Report Analysis"]
+        }
     ];
 
     return (
